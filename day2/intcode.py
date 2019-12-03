@@ -34,8 +34,17 @@ class IntCodeVM:
             return
 
 
-line = open("input").readline()
+line = open(sys.argv[1]).readline()
 memory = [int(x) for x in line.split(",")]
+
+newmem = memory.copy()
+newmem[1] = 12
+newmem[2] = 2
+vm = IntCodeVM(newmem)
+vm.run()
+result = vm.memory[0]
+print(f"1202 result is {result}")
+
 
 for noun in range(100):
     for verb in range(100):
@@ -46,4 +55,4 @@ for noun in range(100):
         vm.run()
         result = vm.memory[0]
         if result == 19690720:
-            print(f"{noun:<2}{verb:<2}")
+            print(f"input for 19690720 result is {noun:<2}{verb:<2}")
