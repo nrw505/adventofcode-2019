@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import sys
+
 
 class WireSpace:
     def __init__(self):
@@ -36,7 +38,7 @@ class WireSpace:
             self.extend(instruction)
 
 
-infile = open("input")
+infile = open(sys.argv[1])
 
 wire_1 = WireSpace()
 wire_2 = WireSpace()
